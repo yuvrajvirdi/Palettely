@@ -12,9 +12,7 @@ Colour palette generator application built using K-means Clustering
 
 # Demo 
 
-## 
-
-<img width="617" alt="Screen Shot 2022-08-12 at 1 10 16 AM" src="https://user-images.githubusercontent.com/81879713/184288878-4caca1ca-f967-4a55-b70e-a0a9d97cf26d.png">
+<img width="489" alt="Screen Shot 2022-08-12 at 1 23 41 AM" src="https://user-images.githubusercontent.com/81879713/184290105-16c4a7a8-2e9b-4694-966c-1078743be4f6.png">
 
 ## Test Image
 
