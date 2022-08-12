@@ -5,19 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palettely</title>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
-    <h1>Palettely</h1>
-    <p>Colour Palette Generation</p>
+    <h1 class="name">Palettely</h1>
+    <p class="phrase">Colour Palette Generation</p>
 
-    <form method="post" action="{{ url_for('index') }}" enctype="multipart/form-data">
+    {{ error }}
+
+    <form class="form" method="post" action="{{ url_for('index') }}" enctype="multipart/form-data">
         <input type="file" name="image">
+        <input type="number" id="amount" name="amount" placeholder="Amount of Colours" />
         <button type="submit">Submit</button>
     </form>
 
-    {% for colour in colours %}
-        <div>{{ colour }}</div>
-    {% endfor %}
+    <div class="colours">
+        {% for colour in colours %}
+            <div class="colour">
+            <div class="colour-name">
+                {{ colour }}
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" height="75" width="75">
 
+                <rect stroke="black" stroke-width="4" width="75" height="75" style="fill:{{ colour }};"/>
+                 
+            </svg>
+            </div>
+        {% endfor %}
+        
+    </div>
+
+    
+    
 </body>
 </html>
