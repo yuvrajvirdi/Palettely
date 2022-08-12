@@ -38,12 +38,18 @@ def index():
     colours = []
     if request.files:
         image = request.files['image']
+        n_colours = request.form.get('amount')
         '''img = Image.open(image)
         print(img.size)'''
-        colours = get_colours(image, n_colours=5)
+        colours = get_colours(image, n_colours=int(n_colours))
         print(colours)
 
     return render_template("index.html", colours=colours)
+
+@app.errorhandler(500)
+def handle_500(e):
+    error = 'Please enter valid inputs'
+    return render_template('index.html', error=error)
 
 if __name__ == '__main__':
     app.run(debug=True)
